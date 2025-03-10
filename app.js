@@ -6,7 +6,9 @@ const amigos = [];
 //Referencias al HTML
 const nuevoAmigo = document.getElementById('amigo');
 const ulListaAmigos = document.getElementById('listaAmigos')
+const ulResultado = document.getElementById('resultado')
 
+//Función que añade el valor del input al array
 agregarAmigo = () => {
     //Validación por si está vacío o son solo espacios.
     if( !nuevoAmigo.value.trim() ) {
@@ -19,7 +21,12 @@ agregarAmigo = () => {
     amigos.push( nuevoAmigo.value );
     //Borrar valor del input
     nuevoAmigo.value = '';
-    console.log(indice());
 }
 
+//Función que genera un índice en basea la cantidad de elementos en la lista
 const indice = () => Math.floor(Math.random() * amigos.length);
+
+//Función que selecciona e imprime al ganador
+sortearAmigo = () => {
+    ulResultado.innerHTML = `<li>Tu amigo secreto es: ${ amigos[indice()] }</li>`;
+}
