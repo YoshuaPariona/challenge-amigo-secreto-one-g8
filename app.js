@@ -19,4 +19,7 @@ agregarAmigo = () => {
     amigos.push( nuevoAmigo.value );
     //Borrar valor del input
     nuevoAmigo.value = '';
+    console.log(indice());
 }
+
+const indice = () => Math.floor(Math.random() * amigos.length);
