@@ -1,24 +1,23 @@
-import { addName } from "./render-name.js";
+export const renderForm = ( form, addName ) => {
+    const nameInput = document.createElement('input');
+    const addBtn = document.createElement('button');
 
-export const renderForm = ( form ) => {
-    const inputName = document.createElement('input');
-    const btnAdd = document.createElement('button');
+    nameInput.type = 'text';
+    nameInput.className = 'name-input';
+    nameInput.placeholder = 'Escribe un nombre.';
 
-    inputName.type = 'text';
-    inputName.id = 'amigo';
-    inputName.className = 'input-name';
-    inputName.placeholder = 'Escribe un nombre.';
+    addBtn.innerText = 'Agregar';
+    addBtn.className = 'button-add';
 
-    btnAdd.innerText = 'Agregar';
-    btnAdd.className = 'button-add';
+    form.append( nameInput, addBtn );
 
-    form.append( inputName, btnAdd );
-
-    btnAdd.addEventListener('click', () => {
-        if( !inputName.value.trim() ) {
-            alert('Por favor, inserte un nombre válido.')
+    addBtn.addEventListener('click', () => {
+        if( !nameInput.value.trim() ) {
+            alert('Por favor, inserte un nombre válido.');
+            return;
         }
-        addName( inputName.value );
-        inputName.value = '';
+        
+        addName( nameInput.value );
+        nameInput.value = '';
     })
 }
