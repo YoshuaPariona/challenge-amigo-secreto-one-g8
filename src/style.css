@@ -65,7 +65,7 @@ body {
     color: var(--color-white);
 }
 
-.section-title {
+.result-title {
     font-family: "Inter", serif;
     font-size: 32px;
     font-weight: 700;
@@ -99,7 +99,7 @@ body {
 .name-cards {
     display: flex;
     flex-direction: row;
-    height: 230px;
+    height: 310px;
 }
 .column-cards {
     display: flex;
@@ -112,7 +112,7 @@ body {
     border: 3px solid var(--color-button);
     color: var(--color-text);
     padding: 10px ;
-    width: 225px;
+    width: 250px;
     margin: 10px;
     display: flex;
     justify-content: center;
@@ -169,10 +169,15 @@ ul {
     text-align: center;
 }
 
-/* Botón de sortear título */
-.button-draw {
+/* Botones de sortear y resetear nombres */
+
+.action-buttons {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    
+}
+
+.sort-button {
     width: 100%;
     padding: 10px 40px;
     color: var(--color-white);
@@ -180,10 +185,10 @@ ul {
     font-size: 16px;
 }
 
-.button-draw img {
+.sort-button img {
     margin-right: 40px;
 }
 
-.button-draw:hover {
+.sort-button:hover {
     background-color: var(--color-button-hover);
 }

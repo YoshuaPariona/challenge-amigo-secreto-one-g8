@@ -10,7 +10,7 @@ export const renderCards = ( cards, amigos ) => {
             columnCards = createColumn( cards );
         } 
         const nameCard = createCard( amigo );
-        columnCards.append(nameCard)
+        columnCards.append(nameCard);
     });
 }
 
