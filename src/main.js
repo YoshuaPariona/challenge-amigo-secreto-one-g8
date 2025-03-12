@@ -1,10 +1,12 @@
 import { renderForm } from "./presentation/render-form.js";
 import { renderCards } from "./presentation/render-cards.js";
+import { renderButtons } from "./presentation/render-buttons.js";
 
-const amigos = [];
+let amigos = [];
 
 const form = document.querySelector('.name-form');
 const cards = document.querySelector('.name-cards');
+const buttons = document.querySelector('.action-buttons');
 
 const addName = ( name ) => {
     if( amigos.length === 20 ) {
@@ -15,10 +17,15 @@ const addName = ( name ) => {
     renderCards( cards, amigos );
 }
 
-renderForm( form, addName );
-
-const indice = () => Math.floor(Math.random() * amigos.length);
-
-const sortearAmigo = () => {
-    ulResultado.innerHTML = `<li>Tu amigo secreto es: ${ amigos[indice()] }</li>`;
+const drawNames = () => {
+    const indice = Math.floor( Math.random() * amigos.length );
+    console.log(amigos[indice]);
 }
+
+const eraseNames = () => {
+    amigos = [];
+    renderCards( cards, amigos );
+}
+
+renderForm( form, addName );
+renderButtons( buttons, drawNames, eraseNames );
