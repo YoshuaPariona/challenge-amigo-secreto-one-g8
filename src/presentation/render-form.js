@@ -16,7 +16,7 @@ export const renderForm = ( form, addName ) => {
             alert('Por favor, inserte un nombre válido.');
             return;
         }
-        
+
         addName( nameInput.value );
         nameInput.value = '';
     })

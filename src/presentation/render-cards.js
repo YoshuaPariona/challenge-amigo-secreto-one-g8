@@ -5,10 +5,10 @@ export const renderCards = ( cards, amigos ) => {
     let columnCards = createColumn( cards );
 
     amigos.forEach( ( amigo, index ) => {
-        //Cuando existan 5, cambia de columna
+        //Cuando existan 4, agrega una columna
         if( index > 0 && index % 4 === 0 ){
             columnCards = createColumn( cards );
-        }
+        } 
         const nameCard = createCard( amigo );
         columnCards.append(nameCard)
     });
