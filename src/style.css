@@ -24,6 +24,15 @@ body {
     align-items: center;
 }
 
+button {
+    padding: 15px 30px;
+    font-family: "Inter", sans-serif;
+    border: 2px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
 .main-content {
     display: flex;
     flex-direction: column;
@@ -33,15 +42,39 @@ body {
 
 /* Banner */
 .header-banner {
-    flex: 15%;
+    flex: 13%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.main-image {
+
+.header-banner img{
     height: 150px;
     margin-left: 40px;
     margin-right: 40px;
+}
+/* animación del regalo */
+@keyframes sacudir {
+    0% {
+        transform: rotate( 0deg );
+    }
+    25% {
+        transform: rotate( 5deg );
+    }
+    50% {
+        transform: rotate( -5deg );
+    }
+    75% {
+        transform: rotate( 5deg );
+    }
+    100% {
+        transform: rotate( 0deg );
+    }
+}
+
+.regalo-animation {
+    animation: sacudir 0.8s ease;
+    animation-iteration-count: 1;
 }
 
 /* Sección del cuerpo*/
@@ -74,6 +107,11 @@ body {
     text-align: center;
 }
 
+.result {
+    color: var(--color-result);
+    font-weight: bold;
+}
+
 /* Contenedores de entrada y botón */
 .name-form {
     display: flex;
@@ -92,12 +130,16 @@ body {
 }
 .button-add {
     background-color: var(--color-tertiary);
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     color: var(--color-text);
     border-radius: 0 25px 25px 0;
 }
+
+.button-add:hover {
+    background-color: #a1a1a1;
+}
+
 
 /* Contenedores de los nombres */
 .name-cards {
@@ -123,7 +165,6 @@ body {
     padding: 10px ;
     width: 250px;
 }
-
 .name-text {
     flex-grow: 1;
     margin-right: 10px;
@@ -134,58 +175,41 @@ body {
     gap: 8px;
 }
 
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilos de botón */
-button {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.inner-card-buttons img {
     cursor: pointer;
+    transition: transform 0.1s;
 }
 
-.button-add:hover {
-    background-color: #a1a1a1;
-}
-
-/* Listas */
-
-.result {
-    color: var(--color-result);
-    font-weight: bold;
+.inner-card-buttons img:hover {
+    transform: scale(1.1);
 }
 
 /* Botones de sortear y resetear nombres */
 .action-buttons {
     display: flex;
+    align-items: center;
     flex-direction: row;
+    padding-top: 10px;
+    gap: 20px;
 }
 
 .sort-button {
-    width: 100%;
-    padding: 10px 40px;
-    color: var(--color-white);
+    width: 230px;
+    font-size: 20px;
+    font-weight: bold;
     background-color: var(--color-button);
-    font-size: 16px;
-}
-
-.sort-button img {
-    margin-right: 40px;
 }
 
 .sort-button:hover {
     background-color: var(--color-button-hover);
+}
+
+.reset-button {
+    width: 160px;
+    font-size: 18px;
+    
+}
+
+.reset-button:hover {
+    background-color: var(--color-tertiary);
 }

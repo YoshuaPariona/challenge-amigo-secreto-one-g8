@@ -8,7 +8,7 @@ let amigos = [];
 const form = document.querySelector('.name-form');
 const cards = document.querySelector('.name-cards');
 const buttons = document.querySelector('.action-buttons');
-const result = document.querySelector('.result-title');
+const regalo = document.querySelector('.regalo-image');
 
 const addName = ( name ) => {
     if( amigos.length === 20 ) {
@@ -26,6 +26,10 @@ const drawNames = () => {
     }
     const indice = Math.floor( Math.random() * amigos.length );
     renderResult( amigos[indice] );
+    regalo.classList.add('regalo-animation');
+    setTimeout(() => {
+        regalo.classList.remove('regalo-animation');
+    },800)
 }
 
 const resetNames = () => {
