@@ -1,0 +1,215 @@
+:root {
+    --color-primary: #4B69FD;
+    --color-secondary: #FFF9EB;
+    --color-tertiary: #C4C4C4;
+    --color-button: #fe652b;
+    --color-button-hover: #e55720;
+    --color-text: #444444;
+    --color-white: #ffffff;
+    --color-result: #05DF05;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 15px 30px;
+    font-family: "Inter", sans-serif;
+    border: 2px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* Banner */
+.header-banner {
+    flex: 13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-banner img{
+    height: 150px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+/* animación del regalo */
+@keyframes sacudir {
+    0% {
+        transform: rotate( 0deg );
+    }
+    25% {
+        transform: rotate( 5deg );
+    }
+    50% {
+        transform: rotate( -5deg );
+    }
+    75% {
+        transform: rotate( 5deg );
+    }
+    100% {
+        transform: rotate( 0deg );
+    }
+}
+
+.regalo-animation {
+    animation: sacudir 0.8s ease;
+    animation-iteration-count: 1;
+}
+
+/* Sección del cuerpo*/
+.input-section {
+    flex: 60%;
+    background-color: var(--color-secondary);
+    border: 1px solid #000;
+    border-radius: 64px 64px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Resultado */
+.main-title {
+    font-size: 48px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+}
+
+.result-title {
+    font-family: "Inter", serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.result {
+    color: var(--color-result);
+    font-weight: bold;
+}
+
+/* Contenedores de entrada y botón */
+.name-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.name-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 25px 0 0 25px;
+    font-size:20px;
+}
+.button-add {
+    background-color: var(--color-tertiary);
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-text);
+    border-radius: 0 25px 25px 0;
+}
+
+.button-add:hover {
+    background-color: #a1a1a1;
+}
+
+
+/* Contenedores de los nombres */
+.name-cards {
+    display: flex;
+    flex-direction: row;
+    height: 310px;
+}
+.column-cards {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.name-card {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    border: 3px solid var(--color-button);
+    color: var(--color-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    margin: 10px;
+    padding: 10px ;
+    width: 250px;
+}
+.name-text {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+.inner-card-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.inner-card-buttons img {
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.inner-card-buttons img:hover {
+    transform: scale(1.1);
+}
+
+/* Botones de sortear y resetear nombres */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 10px;
+    gap: 20px;
+}
+
+.sort-button {
+    width: 230px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--color-button);
+}
+
+.sort-button:hover {
+    background-color: var(--color-button-hover);
+}
+
+.reset-button {
+    width: 160px;
+    font-size: 18px;
+    
+}
+
+.reset-button:hover {
+    background-color: var(--color-tertiary);
+}
